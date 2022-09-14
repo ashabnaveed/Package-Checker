@@ -1,0 +1,59 @@
+#Ashab Naveed 
+#Computing Science 10
+#Package Check
+#Henry Wise Wood High School
+#2021-22 Semester 1
+#October 6th, 2021
+
+#inputs from the user
+weight = float(input("What the the boxes weight? (KG):"))
+length = float(input("What the the boxes length? (cm):"))
+width = float(input("What is the boxes width? (cm):"))
+height = float(input("What is the boxes height? (cm):"))
+
+#calculates the volume of the box
+volume = (length * width * height)
+
+#defines the outputs for later use for accurate results
+output_1 = 0
+output_2 = 0
+too_large = 0
+too_heavy = 0
+
+#states the "too large" portion
+if volume >= 100000:
+  too_large = 1
+
+#states if it is the correct size, redefining the output
+if volume <= 100000:
+   output_1 = 1
+  
+#states the "too heavy" portion
+if weight >= 27:
+  too_heavy = 2
+ 
+fail = too_large + too_heavy
+
+#uses the fail values to print out a sentence
+if fail == 3:
+  print ('too heavy and too large')
+
+if fail == 2:
+  print ('too heavy')
+
+if fail == 1:
+  print ('too large')
+
+#states that if it is the correct weight, redefining the output
+if weight <= 27:
+  output_2 = 1
+
+#determines if the package is accepted or not
+acceptance = output_1 + output_2
+
+#if both outputs were redefined to 1, it should sum up to 2 resulting in an accepted box
+if acceptance == 2:
+  print('accepted')
+
+
+
